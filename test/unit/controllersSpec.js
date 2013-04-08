@@ -2,30 +2,27 @@
 
 /* jasmine specs for controllers go here */
 
-describe('MyCtrl1', function(){
-  var myCtrl1;
+describe('GameController', function () {
 
-  beforeEach(function(){
-    myCtrl1 = new MyCtrl1();
-  });
+   beforeEach(module('myApp.services'));
 
+    describe('GameController', function() {
+        var scope, ctrl, $httpBackend;
+        beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+            $httpBackend = _$httpBackend_;
+            $httpBackend.expectGET(/^.*\/board$/).respond(
+                {"turn":1,"board":{"id":1,"markers":["X"]}}
+            )
+            scope = $rootScope.$new();
+            ctrl = $controller(GameController, {$scope: scope});
+        }));
 
-  it('should ....', function() {
-    //spec body
-  });
-});
+        it('should put turn information in scope', function () {
+            $httpBackend.flush();
+            expect(scope.turn.turn).toEqual(1);
+            expect(scope.turn.board.markers[0]).toEqual('X');
+        });
 
+    });
 
-describe('MyCtrl2', function(){
-  var myCtrl2;
-
-
-  beforeEach(function(){
-    myCtrl2 = new MyCtrl2();
-  });
-
-
-  it('should ....', function() {
-    //spec body
-  });
 });

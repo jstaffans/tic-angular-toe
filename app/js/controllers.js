@@ -3,10 +3,8 @@
 /* Controllers */
 
 
-function MyCtrl1() {}
-MyCtrl1.$inject = [];
-
-
-function MyCtrl2() {
+function GameController($scope, Turn) {
+    $scope.turn = Turn.get();
 }
-MyCtrl2.$inject = [];
+
+GameController.$inject = ['$scope', 'Turn'];
