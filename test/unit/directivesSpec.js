@@ -2,6 +2,8 @@
 
 'use strict';
 
+/*
+
 describe('delegateClicks', function() {
   var elm, scope;
 
@@ -36,3 +38,4 @@ describe('delegateClicks', function() {
 
 });
 
+*/

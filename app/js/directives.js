@@ -2,7 +2,8 @@
 
 /* Directives */
 
-angular.module('myApp.directives', []).
+angular.module('myApp.directives', []);
+/*
   directive('delegateClicks', function() {
     return function(scope, element, attrs) {
       var fn = attrs.delegateClicks;
@@ -14,3 +15,4 @@ angular.module('myApp.directives', []).
       });
     }
   });
+*/

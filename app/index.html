@@ -12,8 +12,8 @@
       <div class="page-header">
         <h3>Tic-Angular-Toe</h3>
       </div>
-        <div class="game-container" delegate-clicks="putMarker" delegate-selector="div">
-            <div ng-repeat="marker in turn.board.markers" class="marker" data-ng-index="{{$index}}">
+        <div class="game-container">
+            <div ng-repeat="marker in turn.board.markers" class="marker" ng-click="putMarker($index)">
                 {{marker}}
             </div>
         </div>
