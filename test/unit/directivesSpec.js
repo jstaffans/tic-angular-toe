@@ -1,3 +1,5 @@
+// For unit testing directives: https://github.com/vojtajina/ng-directive-testing
+
 'use strict';
 
 describe('delegateClicks', function() {
